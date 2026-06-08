@@ -16,16 +16,16 @@ document.getElementById("orderForm")
     let pembayaran =
     document.getElementById("pembayaran").value;
 
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify({
-            nama: nama,
-            jumlah: jumlah,
-            pembayaran: pembayaran
+    fetch(scriptURL,{
+        method:"POST",
+        body:JSON.stringify({
+            nama:nama,
+            jumlah:jumlah,
+            pembayaran:pembayaran
         })
     })
 
-    .then(response => response.text())
+    .then(response => response.json())
 
     .then(data => {
 
@@ -40,7 +40,7 @@ document.getElementById("orderForm")
 
     .catch(error => {
 
-        console.error(error);
+        console.log(error);
 
         document.getElementById("status")
         .innerHTML =
@@ -51,7 +51,7 @@ document.getElementById("orderForm")
 });
 
 
-// CEK STATUS
+// CEK STATUS PESANAN
 function cekStatus(){
 
     let nama =
@@ -80,13 +80,12 @@ function cekStatus(){
         .innerHTML =
 
         `
-        <div style="text-align:left">
         <p><b>👤 Nama:</b> ${data.nama}</p>
         <p><b>📦 Jumlah:</b> ${data.jumlah} Box</p>
         <p><b>💳 Pembayaran:</b> ${data.pembayaran}</p>
         <p><b>📍 Status:</b> ${data.status}</p>
-        </div>
         `;
+
     })
 
     .catch(error => {
