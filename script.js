@@ -1,5 +1,5 @@
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbw6PiyF_yJOZviKIq7IfX4Hzd2cFxydFvmvweeCt6D0n1_cmfWkO0yqzBdfOyxB-hBsqw/exec";
+"https://script.google.com/macros/s/AKfycbxxfQ-r5K7Fm5UjLYTkgpbiThQ6lOnrZBv06VAkIVbnsmbrTsR96hu_8GiIKvsEAEJqHg/exec";
 
 document
 .getElementById("orderForm")
@@ -24,31 +24,64 @@ jumlah:jumlah,
 pembayaran:pembayaran
 })
 })
-.then(response=>response.text())
-.then(result=>{
+.then(res=>res.text())
+.then(data=>{
 
 document.getElementById("status")
 .innerHTML =
 "✅ Pesanan berhasil dikirim";
 
-document.getElementById("statusOrder")
-.innerHTML =
-"⏳ Menunggu Konfirmasi Admin";
-
-document.getElementById("historyList")
-.innerHTML +=
-`<li>${nama} - ${jumlah} Box (${pembayaran})</li>`;
-
 document.getElementById("orderForm")
 .reset();
 
 })
-.catch(error=>{
+.catch(err=>{
 
 document.getElementById("status")
 .innerHTML =
-"❌ Gagal mengirim pesanan";
+"❌ Gagal mengirim";
 
 });
 
 });
+
+function cekStatus(){
+
+let nama =
+document.getElementById("cekNama").value;
+
+fetch(
+scriptURL +
+"?nama=" +
+encodeURIComponent(nama)
+)
+
+.then(res=>res.json())
+
+.then(data=>{
+
+if(data.status=="Tidak ditemukan"){
+
+document.getElementById(
+"hasilStatus"
+).innerHTML =
+"❌ Pesanan tidak ditemukan";
+
+return;
+
+}
+
+document.getElementById(
+"hasilStatus"
+).innerHTML =
+
+`
+<p>👤 Nama : ${data.nama}</p>
+<p>📦 Jumlah : ${data.jumlah} Box</p>
+<p>💳 Pembayaran : ${data.pembayaran}</p>
+<p>📍 Status : ${data.status}</p>
+`;
+
+});
+
+}
