@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SUMORA Dimsum Flora</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SUMORA DIMSUM FLORA</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,21 +17,19 @@
 
 <h1>🌸 SUMORA DIMSUM FLORA 🌸</h1>
 
-<img src="dimsum.png" class="produk">
+<img src="dimsum.jpg" class="produk">
 
 <h2>Rp12.000 / Box</h2>
 
-<p class="tagline">
-Sehat • Enak • Mantap!
-</p>
+<p>Sehat • Enak • Mantap!</p>
 
-<div class="payment-box">
+<div class="card">
 
 <h3>📱 Pembayaran QRIS</h3>
 
 <img src="qris.jpg" class="qris">
 
-<p>Scan QRIS untuk pembayaran</p>
+<p>Scan QRIS lalu lakukan pemesanan</p>
 
 </div>
 
@@ -61,21 +60,20 @@ Pesan Sekarang
 
 <div id="status"></div>
 
-<div class="status-box">
+<div class="card">
 
-<h3>📦 Status Pesanan</h3>
+<h2>🔍 Cek Status Pesanan</h2>
 
-<p id="statusOrder">
-Belum ada pesanan
-</p>
+<input
+type="text"
+id="cekNama"
+placeholder="Masukkan Nama">
 
-</div>
+<button onclick="cekStatus()">
+Cek Status
+</button>
 
-<div class="history">
-
-<h3>📋 Riwayat Pesanan</h3>
-
-<ul id="historyList"></ul>
+<div id="hasilStatus"></div>
 
 </div>
 
