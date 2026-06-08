@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SUMORA Dimsum Flora</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌸 SUMORA DIMSUM FLORA 🌸</h1>
+
+<img src="dimsum.jpg" class="produk">
+
+<h2>Rp12.000 / Box</h2>
+
+<p>Sehat • Enak • Mantap!</p>
+
+<form id="orderForm">
+
+<input
+type="text"
+id="nama"
+placeholder="Nama Pemesan"
+required>
+
+<input
+type="number"
+id="jumlah"
+placeholder="Jumlah Box"
+required>
+
+<select id="pembayaran">
+<option>QRIS</option>
+<option>Cash</option>
+</select>
+
+<button type="submit">
+Pesan Sekarang
+</button>
+
+</form>
+
+<div id="status"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
