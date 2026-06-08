@@ -1,5 +1,5 @@
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbxxfQ-r5K7Fm5UjLYTkgpbiThQ6lOnrZBv06VAkIVbnsmbrTsR96hu_8GiIKvsEAEJqHg/exec";
+"https://script.google.com/macros/s/AKfycbxWB-i2hyWcQbKMAinaernJu3QI4txb3cYK94ACkrscORSp4GnXyGI7zuhFMU23fFVQtg/exec";
 
 document
 .getElementById("orderForm")
