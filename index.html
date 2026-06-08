@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SUMORA Dimsum Flora</title>
 
@@ -20,7 +20,19 @@
 
 <h2>Rp12.000 / Box</h2>
 
-<p>Sehat • Enak • Mantap!</p>
+<p class="tagline">
+Sehat • Enak • Mantap!
+</p>
+
+<div class="payment-box">
+
+<h3>📱 Pembayaran QRIS</h3>
+
+<img src="qris.jpg" class="qris">
+
+<p>Scan QRIS untuk pembayaran</p>
+
+</div>
 
 <form id="orderForm">
 
@@ -48,6 +60,24 @@ Pesan Sekarang
 </form>
 
 <div id="status"></div>
+
+<div class="status-box">
+
+<h3>📦 Status Pesanan</h3>
+
+<p id="statusOrder">
+Belum ada pesanan
+</p>
+
+</div>
+
+<div class="history">
+
+<h3>📋 Riwayat Pesanan</h3>
+
+<ul id="historyList"></ul>
+
+</div>
 
 </div>
 
