@@ -1,5 +1,5 @@
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbwmnAKuqJ55C5CvVSpuuXEl9BG5FAKW0hRCjas_0r1Ws6bQOBATOkfIruj9LfXLBH7JSA/exec";
+"https://script.google.com/macros/s/AKfycbwWOJn_WDpEjZAteMhGXFztvXm6qWF3CEotZhFvRQDlugfLHF_FuxlJ-MayfWGiOg4LHw/exec";
 
 // KIRIM PESANAN
 document.getElementById("orderForm")
