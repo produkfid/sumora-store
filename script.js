@@ -1,5 +1,5 @@
 const scriptURL =
-"https://script.google.com/macros/s/AKfycbzuVDMg6zbKl3BD1qdzWOljh733ANn1IPVj0teag-OPjS-hMPUbpt6M6xDsMIw_lHcZ8g/exec";
+"https://script.google.com/macros/s/AKfycbxJGzp9ideUejIwp1scf2X7aPldqq-e5kEDackodUh_EnYQhsJU41ylZKWT86ZcVOdDyw/exec";
 
 document
 .getElementById("orderForm")
@@ -7,20 +7,22 @@ document
 
 e.preventDefault();
 
-const data = {
-nama:
-document.getElementById("nama").value,
+let nama =
+document.getElementById("nama").value;
 
-jumlah:
-document.getElementById("jumlah").value,
+let jumlah =
+document.getElementById("jumlah").value;
 
-pembayaran:
-document.getElementById("pembayaran").value
-};
+let pembayaran =
+document.getElementById("pembayaran").value;
 
 fetch(scriptURL,{
 method:"POST",
-body:JSON.stringify(data)
+body:JSON.stringify({
+nama:nama,
+jumlah:jumlah,
+pembayaran:pembayaran
+})
 })
 .then(response=>response.text())
 .then(result=>{
@@ -28,6 +30,14 @@ body:JSON.stringify(data)
 document.getElementById("status")
 .innerHTML =
 "✅ Pesanan berhasil dikirim";
+
+document.getElementById("statusOrder")
+.innerHTML =
+"⏳ Menunggu Konfirmasi Admin";
+
+document.getElementById("historyList")
+.innerHTML +=
+`<li>${nama} - ${jumlah} Box (${pembayaran})</li>`;
 
 document.getElementById("orderForm")
 .reset();
@@ -37,7 +47,7 @@ document.getElementById("orderForm")
 
 document.getElementById("status")
 .innerHTML =
-"❌ Gagal mengirim";
+"❌ Gagal mengirim pesanan";
 
 });
 
